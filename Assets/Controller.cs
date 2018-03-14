@@ -12,7 +12,7 @@ public class Controller : MonoBehaviour {
 	public Text bodoviText;
 
 	private Vector3 inicijalnaVelicina;
-	private float uvecanjeOznacenog = 1.3f;
+	private float uvecanjeOznacenog = 1.5f;
 	private int bodovi = 0;
 
 	private GameObject oznacenaBundeva {
@@ -24,6 +24,7 @@ public class Controller : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		inicijalnaVelicina = oznacenaBundeva.transform.localScale;
+		Debug.Log (inicijalnaVelicina);
 		oznacenaBundeva.transform.localScale *= uvecanjeOznacenog;
 	}
 	
@@ -58,7 +59,7 @@ public class Controller : MonoBehaviour {
 
 	void PrimjeniSilu ()
 	{
-		//oznacenaBundeva.GetComponent<Rigidbody>().AddForce(Vector3.back * jacinaSile, ForceMode.Impulse);
+		// Pravilo lijeve ruke
 		oznacenaBundeva.GetComponent<Rigidbody>().AddTorque(Vector3.left * jacinaSile, ForceMode.Impulse);
 	}
 
